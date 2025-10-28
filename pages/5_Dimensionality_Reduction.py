@@ -9,9 +9,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 from utils import load_neo_data
 
-st.set_page_config(page_title="Dimensionality Reduction", page_icon="📉", layout="wide")
+st.set_page_config(page_title="Dimensionality Reduction", page_icon="�", layout="wide")
 
-st.title("📉 Dimensionality Reduction for NEO Analysis")
+st.title("Dimensionality Reduction for NEO Analysis")
 
 # Load data
 @st.cache_data
@@ -47,7 +47,7 @@ col2.metric("Number of Samples", X.shape[0])
 
 # PCA
 st.markdown("---")
-st.subheader("1️⃣ Principal Component Analysis (PCA)")
+st.subheader("1. Principal Component Analysis (PCA)")
 
 st.markdown("""
 **Algorithm Explanation:**
@@ -157,7 +157,7 @@ if st.button("Run PCA", key="pca"):
 
 # SVD
 st.markdown("---")
-st.subheader("2️⃣ Singular Value Decomposition (SVD)")
+st.subheader("2. Singular Value Decomposition (SVD)")
 
 st.markdown("""
 **Algorithm Explanation:**
@@ -272,7 +272,7 @@ st.dataframe(comparison_df, use_container_width=True, hide_index=True)
 
 # Conclusions
 st.markdown("---")
-st.subheader("📊 Dimensionality Reduction Conclusions")
+st.subheader("Dimensionality Reduction Conclusions")
 
 st.markdown("""
 **Key Findings:**
@@ -287,6 +287,7 @@ st.markdown("""
 - **Anomaly Detection:** Outliers in reduced space
 - **Model Speed:** Train faster on reduced features
 - **Data Compression:** Store less, preserve information
+- **Combine with clustering:** Efficient monitoring of asteroid groups
 
 **Recommendations:**
 - Use PCA for most cases (more interpretable)
@@ -295,4 +296,4 @@ st.markdown("""
 - Visualize in reduced space to understand patterns
 """)
 
-st.success("✅ Dimensionality reduction reveals hidden structure in asteroid data!")
+st.success("Dimensionality reduction reveals hidden structure in asteroid data!")

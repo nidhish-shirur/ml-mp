@@ -53,10 +53,7 @@ pip package manager
 
 ### Installation
 
-1. Clone or navigate to the repository:
-```bash
-cd "c:\Users\shiru\Desktop\ml-mp"
-```
+1. Clone
 
 2. Install dependencies:
 ```bash
@@ -93,8 +90,8 @@ ml-mp/
 │   ├── 3__Classification_Models.py
 │   ├── 4__Clustering_Analysis.py
 │   ├── 5__Dimensionality_Reduction.py
-│   ├── 6_️_Model_Comparison.py
-│   ├── 8_️_MLOps_Tools.py
+│   ├── 6_Model_Comparison.py
+│   ├── 7_MLOps_Tools.py
 │   └── 9__Conclusion.py
 ├── *_neo.pkl                                # Saved models (generated after training)
 ├── train_test_splits_neo.pkl               # Pre-computed train/test splits
@@ -155,7 +152,7 @@ streamlit run app.py
 4. **3-5 distinct asteroid families** emerge from clustering analysis
 5. **Size, velocity, and distance** are most important for hazard classification
 
-## ️ Technologies Used
+## Technologies Used
 
 - **Python 3.8+**
 - **Scikit-learn**: Machine learning algorithms
@@ -221,6 +218,6 @@ Contributions are welcome! Feel free to:
 
 ---
 
-**Made with ️ for protecting Earth through data science and machine learning** ️
+**Made with care for protecting Earth through data science and machine learning**
 
 **Remember:** The best time to detect an asteroid is years before impact. Early detection saves lives.

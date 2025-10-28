@@ -199,7 +199,7 @@ st.dataframe(df_recommendations, use_container_width=True, hide_index=True)
 
 # Implementation Roadmap
 st.markdown("---")
-st.subheader("️ Implementation Roadmap")
+st.subheader("Implementation Roadmap")
 
 st.markdown("""
 ### Phase 1: Immediate (0-3 months)
@@ -229,7 +229,7 @@ st.markdown("""
 
 # Current Limitations
 st.markdown("---")
-st.subheader("️ Current Limitations & Future Work")
+st.subheader("Current Limitations & Future Work")
 
 col1, col2 = st.columns(2)
 
@@ -322,7 +322,9 @@ humanity's most important challenges: **protecting Earth from asteroid impacts**
 3. **Long-term:** Scale to global early warning network with international cooperation
 
 **The future of planetary defense is data-driven, and this project provides 
-a solid foundation for that future.** ️
+a solid foundation for that future.**
+
+---
 """)
 
 # Acknowledgments
@@ -345,6 +347,6 @@ st.markdown("""
 <div style='text-align: center'>
     <h3>Thank you for exploring this project! </h3>
     <p>Together, we can protect Earth through data science and machine learning.</p>
-    <p><strong>Stay vigilant. Stay informed. Stay safe.</strong> ️</p>
+    <p><strong>Stay vigilant. Stay informed. Stay safe.</strong></p>
 </div>
 """, unsafe_allow_html=True)

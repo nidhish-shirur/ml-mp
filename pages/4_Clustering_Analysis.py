@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import pickle
+import joblib
 from sklearn.cluster import KMeans, DBSCAN
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
@@ -11,9 +12,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 from utils import load_neo_data
 
-st.set_page_config(page_title="Clustering Analysis", page_icon="🔍", layout="wide")
+st.set_page_config(page_title="Clustering Analysis", page_icon="�", layout="wide")
 
-st.title("🔍 Clustering Analysis of Near-Earth Objects")
+st.title("Clustering Analysis of Near-Earth Objects")
 
 # Load data
 @st.cache_data
@@ -46,7 +47,7 @@ X_scaled = scaler.fit_transform(X)
 
 # K-Means Clustering
 st.markdown("---")
-st.subheader("1️⃣ K-Means Clustering")
+st.subheader("1. K-Means Clustering")
 
 st.markdown("""
 **Algorithm Explanation:**
@@ -122,11 +123,11 @@ if st.button("Run K-Means Clustering", key="kmeans"):
             st.dataframe(cluster_data.T, use_container_width=True)
         
         pickle.dump(kmeans, open('kmeans_neo.pkl', 'wb'))
-        st.success("✅ K-Means model saved!")
+        st.success("K-Means model saved!")
 
 # DBSCAN Clustering
 st.markdown("---")
-st.subheader("2️⃣ DBSCAN Clustering")
+st.subheader("2. DBSCAN Clustering")
 
 st.markdown("""
 **Algorithm Explanation:**
@@ -190,11 +191,11 @@ if st.button("Run DBSCAN Clustering", key="dbscan"):
             st.dataframe(noise_data.describe().T, use_container_width=True)
         
         pickle.dump(dbscan, open('dbscan_neo.pkl', 'wb'))
-        st.success("✅ DBSCAN model saved!")
+        st.success("DBSCAN model saved!")
 
 # Conclusions
 st.markdown("---")
-st.subheader("📊 Clustering Conclusions")
+st.subheader("Clustering Conclusions")
 st.markdown("""
 **Algorithm Comparison:**
 - **K-Means:** Fast, works well with spherical clusters, requires specifying K
@@ -213,4 +214,4 @@ st.markdown("""
 - **Mission Planning:** Target similar asteroids for exploration
 """)
 
-st.success("✅ Clustering analysis reveals natural groupings in asteroid population!")
+st.success("Clustering analysis reveals natural groupings in asteroid population!")

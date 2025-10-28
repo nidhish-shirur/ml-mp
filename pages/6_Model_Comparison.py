@@ -3,9 +3,9 @@ import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
 
-st.set_page_config(page_title="Model Comparison", page_icon="⚖️", layout="wide")
+st.set_page_config(page_title="Model Comparison", page_icon="📊", layout="wide")
 
-st.title("⚖️ Model Performance Comparison")
+st.title("Model Performance Comparison")
 
 st.markdown("""
 ## Comprehensive Model Evaluation
@@ -15,7 +15,7 @@ helping identify the best approaches for asteroid hazard detection and analysis.
 """)
 
 # Regression Models Comparison
-st.subheader("📈 Regression Models Performance")
+st.subheader("Regression Models Performance")
 
 regression_data = {
     'Model': ['Linear Regression', 'Polynomial Regression (degree=2)'],
@@ -46,7 +46,7 @@ st.markdown("""
 
 # Classification Models Comparison
 st.markdown("---")
-st.subheader("🎯 Classification Models Performance")
+st.subheader("Classification Models Performance")
 
 classification_data = {
     'Model': ['Decision Tree', 'SVM', 'Random Forest', 'Gradient Boosting'],
@@ -79,7 +79,7 @@ st.markdown("""
 
 # Clustering Models Comparison
 st.markdown("---")
-st.subheader("🔍 Clustering Models Performance")
+st.subheader("Clustering Models Performance")
 
 clustering_data = {
     'Model': ['K-Means (k=3)', 'DBSCAN (eps=0.5)'],
@@ -103,7 +103,7 @@ st.markdown("""
 
 # Dimensionality Reduction Comparison
 st.markdown("---")
-st.subheader("📉 Dimensionality Reduction Performance")
+st.subheader("Dimensionality Reduction Performance")
 
 dr_data = {
     'Method': ['PCA (3 components)', 'SVD (3 components)'],

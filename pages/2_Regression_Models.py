@@ -11,9 +11,9 @@ from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 import plotly.graph_objects as go
 from utils import load_neo_data
 
-st.set_page_config(page_title="Regression Models", page_icon="📈", layout="wide")
+st.set_page_config(page_title="Regression Models", layout="wide")
 
-st.title("📈 Regression Models for NEO Prediction")
+st.title("Regression Models for NEO Prediction")
 
 # Load data
 @st.cache_data(show_spinner=False)
@@ -56,14 +56,14 @@ def get_train_test_split(_X, _y, test_size, random_state):
 
 X_train, X_test, y_train, y_test = get_train_test_split(X, y, test_size, random_state)
 
-st.subheader("📊 Data Split Information")
+st.subheader("Data Split Information")
 col1, col2 = st.columns(2)
 col1.metric("Training Samples", X_train.shape[0])
 col2.metric("Testing Samples", X_test.shape[0])
 
 # Linear Regression
 st.markdown("---")
-st.subheader("1️⃣ Linear Regression")
+st.subheader("1. Linear Regression")
 
 st.markdown("""
 **Algorithm Explanation:**
@@ -79,7 +79,7 @@ st.markdown("""
 
 lr_exists = os.path.exists('linear_regression_neo.pkl')
 if lr_exists:
-    st.info("✅ Pre-trained model found! Will load instantly.")
+    st.info("Pre-trained model found! Will load instantly.")
 
 if st.button("Train/Load Linear Regression", key="lr"):
     with st.spinner("Training Linear Regression..."):
@@ -131,7 +131,7 @@ if st.button("Train/Load Linear Regression", key="lr"):
 
 # Polynomial Regression
 st.markdown("---")
-st.subheader("2️⃣ Polynomial Regression")
+st.subheader("2. Polynomial Regression")
 
 st.markdown("""
 **Algorithm Explanation:**
@@ -147,7 +147,7 @@ poly_degree = st.slider("Polynomial Degree", 2, 4, 2)
 
 poly_exists = os.path.exists('poly_regression_neo.pkl') and poly_degree == 2
 if poly_exists:
-    st.info("✅ Pre-trained model (degree=2) found! Will load instantly.")
+    st.info("Pre-trained model (degree=2) found! Will load instantly.")
 
 if st.button("Train/Load Polynomial Regression", key="poly"):
     with st.spinner(f"Processing degree={poly_degree}..."):
@@ -213,7 +213,7 @@ if st.button("Train/Load Polynomial Regression", key="poly"):
 
 # Conclusions
 st.markdown("---")
-st.subheader("📊 Regression Conclusions")
+st.subheader("Regression Conclusions")
 st.markdown("""
 **Model Comparison:**
 - **Linear Regression:** Fast, interpretable, good baseline
@@ -228,7 +228,7 @@ st.markdown("""
 - Accurate predictions enable early warning systems
 - Helps prioritize which asteroids to monitor closely
 - Supports mission planning for deflection or study
-- Critical for planetary defense strategies
-""")
+    - Critical for planetary defense strategies
+    """)
 
-st.info("💡 **Next Steps:** Try Classification models to predict hazardous asteroids!")
+st.info("**Next Steps:** Try Classification models to predict hazardous asteroids!")

@@ -13,9 +13,9 @@ import plotly.graph_objects as go
 import plotly.figure_factory as ff
 from utils import load_neo_data
 
-st.set_page_config(page_title="Classification Models", page_icon="🎯", layout="wide")
+st.set_page_config(page_title="Classification Models", page_icon="📊", layout="wide")
 
-st.title("🎯 Classification Models for Hazardous Asteroid Detection")
+st.title("Classification Models for Hazardous Asteroid Detection")
 
 # Load data
 @st.cache_data
@@ -54,7 +54,7 @@ col3.metric("Non-Hazardous (False)", len(y) - int(y.sum()))
 
 # Decision Tree
 st.markdown("---")
-st.subheader("1️⃣ Decision Tree Classifier")
+st.subheader("1. Decision Tree Classifier")
 
 st.markdown("""
 **Algorithm Explanation:**
@@ -120,7 +120,7 @@ if st.button("Train Decision Tree", key="dt"):
 
 # SVM
 st.markdown("---")
-st.subheader("2️⃣ Support Vector Machine (SVM)")
+st.subheader("2. Support Vector Machine (SVM)")
 
 st.markdown("""
 **Algorithm Explanation:**
@@ -195,7 +195,7 @@ if st.button("Train SVM", key="svm"):
 
 # Ensemble Methods
 st.markdown("---")
-st.subheader("3️⃣ Ensemble Learning")
+st.subheader("3. Ensemble Learning")
 
 st.markdown("""
 **Random Forest (Bagging):**
@@ -275,7 +275,7 @@ if st.button("Train Ensemble Models", key="ensemble"):
 
 # Conclusions
 st.markdown("---")
-st.subheader("📊 Classification Conclusions")
+st.subheader("Classification Conclusions")
 st.markdown("""
 **Model Comparison:**
 - **Decision Tree:** Fast, interpretable, good for understanding decision logic
@@ -288,6 +288,7 @@ st.markdown("""
 - Helps prioritize asteroid tracking resources
 - Supports mission planning for deflection
 - Critical for protecting Earth from impacts
+- Can save months or years of warning time
 
 **Key Features for Hazard Detection:**
 - Asteroid diameter (size matters!)
@@ -296,4 +297,4 @@ st.markdown("""
 - Absolute magnitude (brightness/size indicator)
 """)
 
-st.success("✅ Classification complete! These models can save lives through early asteroid detection.")
+st.success("Classification complete! These models can save lives through early asteroid detection.")
