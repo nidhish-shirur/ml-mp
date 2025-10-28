@@ -1,8 +1,8 @@
-# 🌠 Near-Earth Object (NEO) Detection - ML Project
+#  Near-Earth Object (NEO) Detection - ML Project
 
 A comprehensive machine learning project for detecting and classifying potentially hazardous asteroids to support planetary defense efforts.
 
-## 🎯 Project Overview
+##  Project Overview
 
 This project applies multiple machine learning algorithms to NASA's Near-Earth Object dataset to:
 - Predict asteroid miss distances and velocities
@@ -10,7 +10,7 @@ This project applies multiple machine learning algorithms to NASA's Near-Earth O
 - Discover asteroid families through clustering
 - Reduce dimensionality for efficient analysis
 
-## 🌍 Societal Impact
+##  Societal Impact
 
 **Domain:** Space Science & Planetary Defense
 
@@ -23,7 +23,7 @@ Near-Earth Objects (NEOs) pose potential threats to Earth. This project enables:
 
 This project accelerates asteroid detection by 90%, reducing manual review workload and enabling faster response to potential threats.
 
-## 📊 Algorithms Implemented
+##  Algorithms Implemented
 
 ### Regression
 - Linear Regression (R² ≈ 0.65-0.75)
@@ -33,7 +33,7 @@ This project accelerates asteroid detection by 90%, reducing manual review workl
 - Decision Trees (Accuracy: ~85%)
 - Support Vector Machines (Accuracy: ~90%)
 - Random Forest (Accuracy: ~95%)
-- Gradient Boosting (Accuracy: ~97%) 🏆
+- Gradient Boosting (Accuracy: ~97%) 
 
 ### Clustering
 - K-Means Clustering
@@ -43,7 +43,7 @@ This project accelerates asteroid detection by 90%, reducing manual review workl
 - PCA (Principal Component Analysis)
 - SVD (Singular Value Decomposition)
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 ```bash
@@ -63,7 +63,7 @@ cd "c:\Users\shiru\Desktop\ml-mp"
 pip install -r requirements.txt
 ```
 
-3. **⚡ Speed Up Loading (Optional but Recommended):**
+3. ** Speed Up Loading (Optional but Recommended):**
 ```bash
 python train_all_models.py
 ```
@@ -76,27 +76,41 @@ streamlit run app.py
 
 The app will open in your browser at `http://localhost:8501`
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 ml-mp/
 ├── app.py                                    # Main Streamlit app
-├── utils.py                                  # Utility functions
+├── config.py                                 # Configuration settings
+├── data_loader.py                            # Data loading utilities
+├── model_loader.py                           # Model loading utilities
+├── utils.py                                  # Utility functions (legacy)
 ├── neo_data.csv                             # Dataset (905 NEO observations)
+├── NEO(Near_Earth_Object).json              # Original JSON data
 ├── pages/                                    # Streamlit multi-page app
-│   ├── 1_📊_Data_Exploration.py
-│   ├── 2_📈_Regression_Models.py
-│   ├── 3_🎯_Classification_Models.py
-│   ├── 4_🔍_Clustering_Analysis.py
-│   ├── 5_📉_Dimensionality_Reduction.py
-│   ├── 6_⚖️_Model_Comparison.py
-│   └── 7_📋_Conclusion.py
-├── *.pkl                                     # Saved models (generated after training)
-├── requirements.txt                          # Python dependencies
-└── README.md                                 # This file
+│   ├── 1__Data_Exploration.py
+│   ├── 2__Regression_Models.py
+│   ├── 3__Classification_Models.py
+│   ├── 4__Clustering_Analysis.py
+│   ├── 5__Dimensionality_Reduction.py
+│   ├── 6_️_Model_Comparison.py
+│   ├── 8_️_MLOps_Tools.py
+│   └── 9__Conclusion.py
+├── *_neo.pkl                                # Saved models (generated after training)
+├── train_test_splits_neo.pkl               # Pre-computed train/test splits
+├── requirements.txt                         # Python dependencies
+└── README.md                                # This file
 ```
 
-## ⚡ Performance Optimization
+##  Performance Optimization
+
+### Modular Architecture
+
+The project now uses a modular architecture for better maintainability:
+
+1. **`config.py`**: Centralized configuration settings
+2. **`data_loader.py`**: Data loading with session state management
+3. **`model_loader.py`**: Model loading utilities with caching
 
 ### Caching Strategy
 
@@ -105,6 +119,7 @@ The app uses Streamlit's caching for optimal performance:
 1. **@st.cache_data**: Caches data loading and transformations (1 hour TTL)
 2. **@st.cache_resource**: Caches models and scalers (persists across runs)
 3. **Pre-trained models**: Train once with `train_all_models.py`, load instantly
+4. **Session state**: Data loaded once and shared across all pages
 
 ### First-Time Setup (Recommended)
 
@@ -121,8 +136,9 @@ streamlit run app.py
 - **Instant model loading** from disk
 - **Cached data processing** across page navigation
 - **Smooth user experience** without waiting
+- **Modular code** for easy maintenance and testing
 
-## 📈 Results Summary
+##  Results Summary
 
 | Task | Best Model | Performance | Use Case |
 |------|-----------|-------------|----------|
@@ -131,7 +147,7 @@ streamlit run app.py
 | Asteroid Grouping | K-Means | Silhouette = 0.35 | Family discovery |
 | Feature Reduction | PCA | 80-85% variance | Visualization |
 
-## 💡 Key Findings
+##  Key Findings
 
 1. **Polynomial features significantly improve prediction accuracy** (R² from 0.65 to 0.82)
 2. **Ensemble methods outperform single models** (GB: 97% vs DT: 85%)
@@ -139,7 +155,7 @@ streamlit run app.py
 4. **3-5 distinct asteroid families** emerge from clustering analysis
 5. **Size, velocity, and distance** are most important for hazard classification
 
-## 🛠️ Technologies Used
+## ️ Technologies Used
 
 - **Python 3.8+**
 - **Scikit-learn**: Machine learning algorithms
@@ -148,7 +164,7 @@ streamlit run app.py
 - **Plotly**: Interactive visualizations
 - **Streamlit**: Web application framework
 
-## 📊 Dataset
+##  Dataset
 
 **Source:** NASA Near-Earth Object Dataset  
 **Samples:** 905 asteroid close approaches  
@@ -156,32 +172,39 @@ streamlit run app.py
 **Target:** Potentially Hazardous Classification (True/False)  
 **Time Range:** 1900-2187
 
-## 🎓 Learning Outcomes
+##  Learning Outcomes
 
 This project demonstrates:
-- ✅ Data preprocessing and exploration
-- ✅ Multiple ML algorithm implementation
-- ✅ Model evaluation and comparison
-- ✅ Feature engineering and selection
-- ✅ Visualization techniques
-- ✅ Web app development with Streamlit
-- ✅ Real-world problem solving
+-  Data preprocessing and exploration
+-  Multiple ML algorithm implementation
+-  Model evaluation and comparison
+-  Feature engineering and selection
+-  Visualization techniques
+-  Web app development with Streamlit
+-  Real-world problem solving
+-  Modular code architecture
+-  MLOps best practices
+-  Production-ready deployment strategies
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 - [ ] Implement deep learning models (Neural Networks)
 - [ ] Add real-time orbital dynamics
-- [ ] Deploy on cloud (AWS/Azure)
+- [ ] Deploy on cloud (AWS/Azure/GCP)
 - [ ] Integrate with NASA API for live data
 - [ ] Add trajectory prediction over time
 - [ ] Create mobile alert application
 - [ ] Implement ensemble voting system
+- [ ] Add MLflow for experiment tracking
+- [ ] Containerize with Docker
+- [ ] Set up CI/CD pipeline
+- [ ] Implement A/B testing framework
 
-## 📝 License
+##  License
 
 This project is created for educational purposes.
 
-## 👥 Contributing
+##  Contributing
 
 Contributions are welcome! Feel free to:
 - Report bugs or issues
@@ -189,7 +212,7 @@ Contributions are welcome! Feel free to:
 - Submit pull requests
 - Improve documentation
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - NASA for providing Near-Earth Object tracking data
 - Scikit-learn community for excellent ML tools
@@ -198,6 +221,6 @@ Contributions are welcome! Feel free to:
 
 ---
 
-**Made with ❤️ for protecting Earth through data science and machine learning** 🛡️🌍
+**Made with ️ for protecting Earth through data science and machine learning** ️
 
 **Remember:** The best time to detect an asteroid is years before impact. Early detection saves lives.

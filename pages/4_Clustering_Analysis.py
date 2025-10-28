@@ -72,20 +72,7 @@ if st.button("Run K-Means Clustering", key="kmeans"):
         kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
         clusters_km = kmeans.fit_predict(X_scaled)
         
-        # Metrics
-        silhouette_km = silhouette_score(X_scaled, clusters_km)
-        davies_bouldin_km = davies_bouldin_score(X_scaled, clusters_km)
-        
-        col1, col2, col3 = st.columns(3)
-        col1.metric("Silhouette Score", f"{silhouette_km:.3f}")
-        col2.metric("Davies-Bouldin Index", f"{davies_bouldin_km:.3f}")
-        col3.metric("Clusters Found", n_clusters)
-        
-        st.info("""
-        **Interpretation:**
-        - **Silhouette Score:** -1 to 1 (higher is better, >0.5 is good)
-        - **Davies-Bouldin Index:** Lower is better
-        """)
+        st.metric("Clusters Found", n_clusters)
         
         # 2D Visualization with PCA
         st.subheader("Cluster Visualization (2D PCA Projection)")
@@ -174,13 +161,6 @@ if st.button("Run DBSCAN Clustering", key="dbscan"):
         col1.metric("Clusters Found", n_clusters_db)
         col2.metric("Noise Points", n_noise)
         col3.metric("Clustered Points", len(clusters_db) - n_noise)
-        
-        if n_clusters_db > 1:
-            # Only calculate if we have valid clusters
-            valid_mask = clusters_db != -1
-            if valid_mask.sum() > 0:
-                silhouette_db = silhouette_score(X_scaled[valid_mask], clusters_db[valid_mask])
-                st.metric("Silhouette Score", f"{silhouette_db:.3f}")
         
         # 2D Visualization
         st.subheader("DBSCAN Clusters (2D PCA Projection)")
