@@ -11,8 +11,8 @@ st.set_page_config(page_title="Data Exploration", layout="wide")
 
 st.title("Near-Earth Object Data Exploration")
 
-# Load data
-@st.cache_data
+# Load data - cached, no spinner for instant feel
+@st.cache_data(show_spinner=False)
 def load_data():
     X, y_hazardous, y_distance, y_velocity, df = load_neo_data()
     return X, y_hazardous, y_distance, y_velocity, df
@@ -21,19 +21,6 @@ X, y_hazardous, y_distance, y_velocity, df = load_data()
 
 st.markdown("""
 ## Dataset Overview
-
-This dataset contains information about Near-Earth Objects (NEOs) - asteroids and comets 
-that pass close to Earth's orbit. Understanding these objects is crucial for planetary defense.
-
-**What is Data Exploration?**
-
-Data exploration is the first and most critical step in any machine learning project. It helps us:
-1. **Understand the data structure**: What features do we have? What do they represent?
-2. **Identify patterns**: Are there relationships between variables?
-3. **Detect anomalies**: Are there unusual values or outliers?
-4. **Guide modeling decisions**: Which algorithms might work best?
-
-**Why It Matters for NEO Detection:**
 
 Before building predictive models, we need to understand:
 - The distribution of asteroid sizes, velocities, and distances
@@ -331,14 +318,4 @@ with col2:
     - Need robust models for accurate classification
     """)
 
-st.info("""
-**Ready for Machine Learning!**
 
-Now that we understand the data, we can build predictive models. Navigate to the next pages to:
-- Train regression models for continuous predictions
-- Build classifiers for hazard detection
-- Discover patterns through clustering
-- Compare model performance
-""")
-
-st.success("Data exploration complete! Proceed to modeling pages to build predictive systems.")

@@ -7,9 +7,9 @@ import streamlit as st
 import pandas as pd
 from config import SESSION_DATA_KEY, DATA_FILE, FEATURE_COLS, TARGET_HAZARDOUS, TARGET_DISTANCE, TARGET_VELOCITY
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=7200, show_spinner=False)  # Cache for 2 hours, no spinner
 def load_neo_data():
-    """Load NEO dataset from CSV (cached for 1 hour)"""
+    """Load NEO dataset from CSV (cached for 2 hours, instant after first load)"""
     try:
         df = pd.read_csv(DATA_FILE)
         return df
@@ -86,4 +86,21 @@ def clear_data_cache():
 
 def get_data_source():
     """Return data source description"""
-    return f"Data loaded from {DATA_FILE}"
+    return f"⚡ Data loaded from {DATA_FILE}"
+
+def get_train_test_split(test_size=0.2, random_state=42):
+    """Get cached train-test split for consistency across pages"""
+    from sklearn.model_selection import train_test_split
+    X = get_X()
+    y_hazardous = get_y_hazardous()
+    
+    return train_test_split(X, y_hazardous, test_size=test_size, random_state=random_state)
+
+@st.cache_data(show_spinner=False)
+def get_scaled_data():
+    """Get scaled feature matrix (cached)"""
+    from sklearn.preprocessing import StandardScaler
+    X = get_X()
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+    return X_scaled, scaler

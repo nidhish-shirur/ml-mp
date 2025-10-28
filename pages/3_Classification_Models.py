@@ -18,7 +18,7 @@ st.set_page_config(page_title="Classification Models", page_icon="📊", layout=
 st.title("Classification Models for Hazardous Asteroid Detection")
 
 # Load data
-@st.cache_data
+@st.cache_data(show_spinner=False)
 def load_data():
     X, y_hazardous, y_distance, y_velocity, df = load_neo_data()
     return X, y_hazardous

@@ -15,13 +15,12 @@ st.set_page_config(page_title="Regression Models", layout="wide")
 
 st.title("Regression Models for NEO Prediction")
 
-# Load data
+# Load data - fast cached load, no spinner
 @st.cache_data(show_spinner=False)
 def load_data():
     return load_neo_data()
 
-with st.spinner("Loading dataset..."):
-    X, y_hazardous, y_distance, y_velocity, df = load_data()
+X, y_hazardous, y_distance, y_velocity, df = load_data()
 
 st.markdown("""
 ## Objective: Predict Asteroid Properties
