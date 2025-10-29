@@ -1,8 +1,8 @@
-#  Near-Earth Object (NEO) Detection - ML Project
+# Near-Earth Object (NEO) Detection - ML Project
 
 A comprehensive machine learning project for detecting and classifying potentially hazardous asteroids to support planetary defense efforts.
 
-##  Project Overview
+## Project Overview
 
 This project applies multiple machine learning algorithms to NASA's Near-Earth Object dataset to:
 - Predict asteroid miss distances and velocities
@@ -10,7 +10,7 @@ This project applies multiple machine learning algorithms to NASA's Near-Earth O
 - Discover asteroid families through clustering
 - Reduce dimensionality for efficient analysis
 
-##  Societal Impact
+## Societal Impact
 
 **Domain:** Space Science & Planetary Defense
 
@@ -23,7 +23,7 @@ Near-Earth Objects (NEOs) pose potential threats to Earth. This project enables:
 
 This project accelerates asteroid detection by 90%, reducing manual review workload and enabling faster response to potential threats.
 
-##  Algorithms Implemented
+## Algorithms Implemented
 
 ### Regression
 - Linear Regression (R² ≈ 0.65-0.75)
@@ -41,9 +41,8 @@ This project accelerates asteroid detection by 90%, reducing manual review workl
 
 ### Dimensionality Reduction
 - PCA (Principal Component Analysis)
-- SVD (Singular Value Decomposition)
 
-##  Getting Started
+## Getting Started
 
 ### Prerequisites
 ```bash
@@ -73,7 +72,7 @@ streamlit run app.py
 
 The app will open in your browser at `http://localhost:8501`
 
-##  Project Structure
+## Project Structure
 
 ```
 ml-mp/
@@ -99,7 +98,7 @@ ml-mp/
 └── README.md                                # This file
 ```
 
-##  Performance Optimization
+## Performance Optimization
 
 ### Modular Architecture
 
@@ -135,7 +134,7 @@ streamlit run app.py
 - **Smooth user experience** without waiting
 - **Modular code** for easy maintenance and testing
 
-##  Results Summary
+## Results Summary
 
 | Task | Best Model | Performance | Use Case |
 |------|-----------|-------------|----------|
@@ -161,7 +160,7 @@ streamlit run app.py
 - **Plotly**: Interactive visualizations
 - **Streamlit**: Web application framework
 
-##  Dataset
+## Dataset
 
 **Source:** NASA Near-Earth Object Dataset  
 **Samples:** 905 asteroid close approaches  
@@ -169,21 +168,21 @@ streamlit run app.py
 **Target:** Potentially Hazardous Classification (True/False)  
 **Time Range:** 1900-2187
 
-##  Learning Outcomes
+## Learning Outcomes
 
 This project demonstrates:
--  Data preprocessing and exploration
--  Multiple ML algorithm implementation
--  Model evaluation and comparison
--  Feature engineering and selection
--  Visualization techniques
--  Web app development with Streamlit
--  Real-world problem solving
--  Modular code architecture
--  MLOps best practices
--  Production-ready deployment strategies
+- Data preprocessing and exploration
+- Multiple ML algorithm implementation
+- Model evaluation and comparison
+- Feature engineering and selection
+- Visualization techniques
+- Web app development with Streamlit
+- Real-world problem solving
+- Modular code architecture
+- MLOps best practices
+- Production-ready deployment strategies
 
-##  Future Enhancements
+## Future Enhancements
 
 - [ ] Implement deep learning models (Neural Networks)
 - [ ] Add real-time orbital dynamics
@@ -197,11 +196,11 @@ This project demonstrates:
 - [ ] Set up CI/CD pipeline
 - [ ] Implement A/B testing framework
 
-##  License
+## License
 
 This project is created for educational purposes.
 
-##  Contributing
+## Contributing
 
 Contributions are welcome! Feel free to:
 - Report bugs or issues
@@ -209,7 +208,7 @@ Contributions are welcome! Feel free to:
 - Submit pull requests
 - Improve documentation
 
-##  Acknowledgments
+## Acknowledgments
 
 - NASA for providing Near-Earth Object tracking data
 - Scikit-learn community for excellent ML tools

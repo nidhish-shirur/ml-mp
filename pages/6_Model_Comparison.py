@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
 
-st.set_page_config(page_title="Model Comparison", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Model Comparison", layout="wide")
 
 st.title("Model Performance Comparison")
 
@@ -126,7 +126,7 @@ st.markdown("""
 
 # Overall Recommendations
 st.markdown("---")
-st.subheader("🏆 Model Recommendations by Use Case")
+st.subheader("Model Recommendations by Use Case")
 
 recommendations = {
     'Use Case': [
@@ -160,7 +160,7 @@ st.dataframe(df_recommendations, use_container_width=True, hide_index=True)
 
 # Performance vs Complexity Trade-off
 st.markdown("---")
-st.subheader("📊 Performance vs Complexity Trade-off")
+st.subheader("Performance vs Complexity Trade-off")
 
 tradeoff_data = {
     'Model': ['Linear Reg', 'Poly Reg', 'Decision Tree', 'SVM', 'Random Forest', 'Gradient Boosting'],
@@ -183,7 +183,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 # Cost-Benefit Analysis
 st.markdown("---")
-st.subheader("💰 Societal Impact & Benefits")
+st.subheader("Societal Impact & Benefits")
 
 col1, col2 = st.columns(2)
 
@@ -210,7 +210,7 @@ with col2:
 
 # Summary
 st.markdown("---")
-st.subheader("📊 Executive Summary")
+st.subheader("Executive Summary")
 
 st.success("""
 **Key Takeaways:**
@@ -235,7 +235,7 @@ for potentially hazardous objects and enabling timely planetary defense response
 
 # Model Selection Guide
 st.markdown("---")
-st.subheader("🎯 Quick Model Selection Guide")
+st.subheader("Quick Model Selection Guide")
 
 selection_guide = pd.DataFrame({
     'If you need...': [
@@ -267,6 +267,6 @@ selection_guide = pd.DataFrame({
 st.dataframe(selection_guide, use_container_width=True, hide_index=True)
 
 st.info("""
-💡 **Pro Tip:** Start with Random Forest for production, use Gradient Boosting when accuracy 
+**Pro Tip:** Start with Random Forest for production, use Gradient Boosting when accuracy 
 is absolutely critical, and always use DBSCAN to identify unusual objects that need special attention.
 """)

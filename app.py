@@ -29,7 +29,7 @@ st.sidebar.success(f"{data_source}")
 st.sidebar.info(f"**{metadata['n_samples']}** asteroids | **{metadata['n_features']}** features")
 
 # Add cache management button
-if st.sidebar.button("🗑️ Clear Data Cache"):
+if st.sidebar.button("Clear Data Cache"):
     from data_loader import clear_data_cache
     clear_data_cache()
     st.rerun()
@@ -87,7 +87,7 @@ This project demonstrates various machine learning techniques:
 - Regression Models (Linear, Polynomial)
 - Classification Models (Decision Trees, SVM, Ensemble)
 - Clustering Algorithms (K-Means, DBSCAN)
-- Dimensionality Reduction (PCA, SVD)
+- Dimensionality Reduction (PCA)
 - Comprehensive Model Comparison
 
 ### Navigation
@@ -98,14 +98,14 @@ Use the sidebar to navigate through different sections:
 - **Regression Models:** Predict miss distance and velocity
 - **Classification Models:** Classify hazardous asteroids
 - **Clustering Analysis:** Group similar asteroids
-- **Dimensionality Reduction:** Feature analysis with PCA/SVD
+- **Dimensionality Reduction:** Feature analysis with PCA
 - **Model Comparison:** Performance metrics across all models
 - **MLOps Tools:** Best practices and deployment considerations
 - **Conclusion:** Key findings and recommendations
 """)
 
 st.markdown("---")
-st.info("👈 **Get Started:** Select a page from the sidebar to begin exploring!")
+st.info("**Get Started:** Select a page from the sidebar to begin exploring!")
 
 # Performance optimizations
 st.markdown("---")
@@ -139,19 +139,19 @@ col1, col2, col3, col4 = st.columns(4)
 col1.metric("Total Asteroids", f"{metadata['n_samples']:,}")
 col2.metric("Features", metadata['n_features'])
 col3.metric("Hazardous", f"{metadata['hazardous_count']}")
-col4.metric("Load Time", "< 1 second ⚡")
+col4.metric("Load Time", "< 1 second")
 
 # Show first-time setup tip
 if not os.path.exists('linear_regression_neo.pkl'):
     st.warning("""
-    ⚡ **First Time Setup Recommended:**
+    **First Time Setup Recommended:**
     ```bash
     python train_all_models.py
     ```
     This pre-trains all models (2-5 minutes) for instant loading in all pages!
     """)
 else:
-    st.success("**✅ All Ready:** Models are pre-trained and cached. Navigate freely - pages load instantly!")
+    st.success("**All Ready:** Models are pre-trained and cached. Navigate freely - pages load instantly!")
 
 # Footer
 st.markdown("---")

@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 
-st.set_page_config(page_title="Conclusion", page_icon="", layout="wide")
+st.set_page_config(page_title="Conclusion", layout="wide")
 
-st.title(" Project Conclusion & Recommendations")
+st.title("Project Conclusion & Recommendations")
 
 st.markdown("""
 ## Executive Summary
@@ -14,7 +14,7 @@ the power of data science in planetary defense and space exploration.
 """)
 
 # Project Overview
-st.subheader(" Project Achievements")
+st.subheader("Project Achievements")
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Models Trained", "10", "+100%")
@@ -24,7 +24,7 @@ col4.metric("Samples Processed", "905", "")
 
 # Key Findings
 st.markdown("---")
-st.subheader(" Key Findings")
+st.subheader("Key Findings")
 
 tab1, tab2, tab3, tab4 = st.tabs(["Regression", "Classification", "Clustering", "Dimensionality"])
 
@@ -33,16 +33,16 @@ with tab1:
     ### Regression Analysis Results
     
     **Linear Regression:**
-    -  Fast training (< 1 second)
-    -  Interpretable coefficients
-    -  Limited accuracy (R² ≈ 0.65-0.75)
+    - Fast training (< 1 second)
+    - Interpretable coefficients
+    - Limited accuracy (R² ≈ 0.65-0.75)
     - **Use Case:** Quick baseline predictions
     
     **Polynomial Regression:**
-    -  Significantly better accuracy (R² ≈ 0.82)
-    -  Captures non-linear relationships
-    - ️ Slower training (2-3 seconds)
-    -  Risk of overfitting with high degrees
+    - Significantly better accuracy (R² ≈ 0.82)
+    - Captures non-linear relationships
+    - Slower training (2-3 seconds)
+    - Risk of overfitting with high degrees
     - **Use Case:** Accurate miss distance/velocity prediction
     
     **Impact:**
@@ -58,27 +58,27 @@ with tab2:
     
     **Decision Tree:**
     - Accuracy: ~85%
-    -  Highly interpretable
-    -  Fast training and prediction
-    -  Prone to overfitting
+    - Highly interpretable
+    - Fast training and prediction
+    - Prone to overfitting
     
     **Support Vector Machine:**
     - Accuracy: ~90%
-    -  Robust with high-dimensional data
-    -  Good generalization
-    -  Slow training (5-10 seconds)
+    - Robust with high-dimensional data
+    - Good generalization
+    - Slow training (5-10 seconds)
     
     **Random Forest:**
     - Accuracy: ~95%
-    -  Best balance of speed and accuracy
-    -  Feature importance insights
-    -  Robust against overfitting
+    - Best balance of speed and accuracy
+    - Feature importance insights
+    - Robust against overfitting
     
     **Gradient Boosting:**
     - Accuracy: ~97% 
-    -  Highest accuracy achieved
-    -  Excellent for complex patterns
-    -  Longer training time
+    - Highest accuracy achieved
+    - Excellent for complex patterns
+    - Longer training time
     
     **Impact:**
     - Identifies hazardous asteroids with 97% accuracy
@@ -93,16 +93,16 @@ with tab3:
     
     **K-Means:**
     - Silhouette Score: ~0.35
-    -  Fast and scalable
-    -  Clear cluster interpretation
-    -  Requires specifying K
+    - Fast and scalable
+    - Clear cluster interpretation
+    - Requires specifying K
     - **Discovers:** 3-5 distinct asteroid families
     
     **DBSCAN:**
     - Finds: 4-6 clusters + outliers
-    -  Automatic cluster detection
-    -  Identifies unusual objects
-    - ️ Sensitive to parameters
+    - Automatic cluster detection
+    - Identifies unusual objects
+    - Sensitive to parameters
     - **Discovers:** 50-100 unusual asteroids
     
     **Impact:**
@@ -118,15 +118,15 @@ with tab4:
     
     **PCA (Principal Component Analysis):**
     - Variance Retained: ~80-85% with 3 components
-    -  Highly interpretable
-    -  Enables 2D/3D visualization
-    -  Speeds up downstream models
+    - Highly interpretable
+    - Enables 2D/3D visualization
+    - Speeds up downstream models
     
     **SVD (Singular Value Decomposition):**
     - Variance Retained: ~80-85% with 3 components
-    -  Similar to PCA results
-    -  Good for sparse data
-    -  Computationally efficient
+    - Similar to PCA results
+    - Good for sparse data
+    - Computationally efficient
     
     **Impact:**
     - Visualizes complex 6D data in 2D/3D
@@ -137,7 +137,7 @@ with tab4:
 
 # Business Impact
 st.markdown("---")
-st.subheader(" Societal & Economic Impact")
+st.subheader("Societal & Economic Impact")
 
 col1, col2 = st.columns(2)
 
@@ -165,7 +165,7 @@ with col2:
 
 # Technical Recommendations
 st.markdown("---")
-st.subheader(" Technical Recommendations")
+st.subheader("Technical Recommendations")
 
 recommendations = {
     'Scenario': [
@@ -203,28 +203,28 @@ st.subheader("Implementation Roadmap")
 
 st.markdown("""
 ### Phase 1: Immediate (0-3 months)
--  Deploy Random Forest model as web service
--  Integrate with NASA NEO tracking systems
--  Train operators on model usage
--  Set up monitoring dashboard
+- Deploy Random Forest model as web service
+- Integrate with NASA NEO tracking systems
+- Train operators on model usage
+- Set up monitoring dashboard
 
 ### Phase 2: Short-term (3-6 months)
--  Implement automated daily screening
--  Add real-time alerts for high-risk objects
--  Integrate with mission planning systems
--  Develop mobile alert app
+- Implement automated daily screening
+- Add real-time alerts for high-risk objects
+- Integrate with mission planning systems
+- Develop mobile alert app
 
 ### Phase 3: Medium-term (6-12 months)
--  Implement continuous learning pipeline
--  Add multi-model ensemble system
--  Integrate with international space agencies
--  Develop predictive trajectory models
+- Implement continuous learning pipeline
+- Add multi-model ensemble system
+- Integrate with international space agencies
+- Develop predictive trajectory models
 
 ### Phase 4: Long-term (1-2 years)
--  Deploy on satellite observation systems
--  Implement AI-driven deflection planning
--  Create global early warning network
--  Enable automated response protocols
+- Deploy on satellite observation systems
+- Implement AI-driven deflection planning
+- Create global early warning network
+- Enable automated response protocols
 """)
 
 # Current Limitations
@@ -256,7 +256,7 @@ with col2:
 
 # Success Metrics
 st.markdown("---")
-st.subheader(" Success Metrics Dashboard")
+st.subheader("Success Metrics Dashboard")
 
 # Create sample metrics visualization
 fig = go.Figure()
@@ -288,7 +288,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 # Final Thoughts
 st.markdown("---")
-st.subheader(" Final Thoughts")
+st.subheader("Final Thoughts")
 
 st.success("""
 ### Project Success Summary
@@ -296,11 +296,11 @@ st.success("""
 This project successfully demonstrates the application of machine learning to a critical 
 real-world problem in planetary defense. Key achievements include:
 
-1.  **Technical Excellence:** Implemented 10 different ML algorithms with comprehensive evaluation
-2.  **High Accuracy:** Achieved ~97% classification accuracy for hazard detection
-3.  **Practical Impact:** Models can process thousands of asteroids in seconds
-4.  **Societal Benefit:** Enables early warning systems that could save millions of lives
-5.  **Scalability:** Ready for production deployment with proper monitoring
+1. **Technical Excellence:** Implemented 10 different ML algorithms with comprehensive evaluation
+2. **High Accuracy:** Achieved ~97% classification accuracy for hazard detection
+3. **Practical Impact:** Models can process thousands of asteroids in seconds
+4. **Societal Benefit:** Enables early warning systems that could save millions of lives
+5. **Scalability:** Ready for production deployment with proper monitoring
 
 ### Why This Matters
 
@@ -329,7 +329,7 @@ a solid foundation for that future.**
 
 # Acknowledgments
 st.markdown("---")
-st.subheader(" Acknowledgments")
+st.subheader("Acknowledgments")
 
 st.markdown("""
 - **NASA** for providing Near-Earth Object tracking data
@@ -345,7 +345,7 @@ st.markdown("""
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center'>
-    <h3>Thank you for exploring this project! </h3>
+    <h3>Thank you for exploring this project!</h3>
     <p>Together, we can protect Earth through data science and machine learning.</p>
     <p><strong>Stay vigilant. Stay informed. Stay safe.</strong></p>
 </div>

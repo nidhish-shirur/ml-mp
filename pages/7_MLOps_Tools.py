@@ -5,7 +5,7 @@ import os
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-st.set_page_config(page_title="MLOps Tools Comparison", page_icon="🔧", layout="wide")
+st.set_page_config(page_title="MLOps Tools Comparison", layout="wide")
 
 st.title("MLOps Tools Comparison")
 
@@ -17,7 +17,7 @@ This page compares popular MLOps tools: **Orange**, **RapidMiner**, **Weka**, an
 """)
 
 # Tool Comparison
-st.subheader(" Tool Comparison")
+st.subheader("Tool Comparison")
 
 # Orange
 st.markdown("### Orange")
@@ -56,21 +56,21 @@ st.markdown("""
 """)
 
 # Feature Comparison Table
-st.subheader(" Feature Comparison Table")
+st.subheader("Feature Comparison Table")
 
 comparison_data = {
     'Feature': ['Ease of Use', 'Flexibility', 'Scalability', 'Cost', 'Best For'],
-    'Orange': ['', 'Limited', 'Limited', 'Free', 'Beginners, Education'],
-    'RapidMiner': ['', 'Medium', 'High', '$$$$', 'Enterprises, Automation'],
-    'Weka': ['', 'High', 'Medium', 'Free', 'Research, Education'],
-    'Python/Sklearn': ['', 'Very High', 'High', 'Free', 'Production, Custom Solutions']
+    'Orange': ['High', 'Limited', 'Limited', 'Free', 'Beginners, Education'],
+    'RapidMiner': ['High', 'Medium', 'High', '$$$$', 'Enterprises, Automation'],
+    'Weka': ['Medium', 'High', 'Medium', 'Free', 'Research, Education'],
+    'Python/Sklearn': ['Medium', 'Very High', 'High', 'Free', 'Production, Custom Solutions']
 }
 
 df_comparison = pd.DataFrame(comparison_data)
 st.dataframe(df_comparison, use_container_width=True, hide_index=True)
 
 # Detailed Comparison
-st.subheader(" Detailed Comparison")
+st.subheader("Detailed Comparison")
 
 col1, col2 = st.columns(2)
 
@@ -125,7 +125,7 @@ with col2:
     """)
 
 # Use Case Scenarios
-st.subheader(" Use Case Scenarios")
+st.subheader("Use Case Scenarios")
 
 col1, col2 = st.columns(2)
 
@@ -169,7 +169,7 @@ with col2:
 
 # MLOps Best Practices
 st.markdown("---")
-st.subheader(" MLOps Best Practices")
+st.subheader("MLOps Best Practices")
 
 practices = {
     'Practice': [
@@ -206,7 +206,7 @@ st.dataframe(df_practices, use_container_width=True, hide_index=True)
 
 # Implementation Example
 st.markdown("---")
-st.subheader(" MLOps Implementation for NEO Project")
+st.subheader("MLOps Implementation for NEO Project")
 
 st.code("""
 # Example MLOps Workflow for NEO Detection
@@ -262,7 +262,7 @@ def predict_with_monitoring(features):
 
 # Conclusion
 st.markdown("---")
-st.subheader(" Key Takeaways")
+st.subheader("Key Takeaways")
 
 st.success("""
 **MLOps Workflow Summary:**
@@ -296,12 +296,12 @@ st.success("""
 """)
 
 st.markdown("---")
-st.info(" **Pro Tip:** Start simple with Git and MLflow, then gradually add more MLOps tools as your project scales.")
+st.info("**Pro Tip:** Start simple with Git and MLflow, then gradually add more MLOps tools as your project scales.")
 
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center'>
     <p>This MLOps page demonstrates industry best practices for deploying ML models in production.</p>
-    <p>Apply these concepts to scale your NEO detection system! </p>
+    <p>Apply these concepts to scale your NEO detection system!</p>
 </div>
 """, unsafe_allow_html=True)

@@ -85,7 +85,7 @@ if st.button("Train/Load Linear Regression", key="lr"):
         if lr_exists:
             with open('linear_regression_neo.pkl', 'rb') as f:
                 lr = pickle.load(f)
-            st.success("⚡ Loaded from disk!")
+            st.success("Loaded from disk!")
         else:
             lr = LinearRegression()
             lr.fit(X_train, y_train)
@@ -157,7 +157,7 @@ if st.button("Train/Load Polynomial Regression", key="poly"):
             with open('poly_features_neo.pkl', 'rb') as f:
                 poly = pickle.load(f)
             X_train_poly = poly.transform(X_train)
-            st.success("⚡ Loaded from disk!")
+            st.success("Loaded from disk!")
         else:
             # Train new model
             poly = PolynomialFeatures(degree=poly_degree)

@@ -10,7 +10,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from utils import load_neo_data
 
-st.set_page_config(page_title="Clustering Analysis", page_icon="�", layout="wide")
+st.set_page_config(page_title="Clustering Analysis", layout="wide")
 
 st.title("Clustering Analysis of Near-Earth Objects")
 
@@ -90,28 +90,6 @@ if st.button("Run K-Means Clustering", key="kmeans"):
                         color_discrete_sequence=px.colors.qualitative.Set1)
         st.plotly_chart(fig, use_container_width=True)
         
-        # 3D Visualization
-        st.subheader("Cluster Visualization (3D PCA Projection)")
-        pca_3d = PCA(n_components=3)
-        X_pca_3d = pca_3d.fit_transform(X_scaled)
-        
-        fig = go.Figure(data=[go.Scatter3d(
-            x=X_pca_3d[:, 0],
-            y=X_pca_3d[:, 1],
-            z=X_pca_3d[:, 2],
-            mode='markers',
-            marker=dict(
-                size=5,
-                color=clusters_km,
-                colorscale='Viridis',
-                showscale=True,
-                colorbar=dict(title="Cluster")
-            )
-        )])
-        fig.update_layout(title='K-Means Clusters (3D PCA Projection)',
-                         scene=dict(xaxis_title='PC1', yaxis_title='PC2', zaxis_title='PC3'))
-        st.plotly_chart(fig, use_container_width=True)
-        
         # Cluster Statistics
         st.subheader("Cluster Statistics")
         for i in range(n_clusters):
@@ -121,7 +99,6 @@ if st.button("Run K-Means Clustering", key="kmeans"):
             st.dataframe(cluster_data.T, use_container_width=True)
         
         pickle.dump(kmeans, open('kmeans_neo.pkl', 'wb'))
-        st.success("K-Means model saved!")
 
 # DBSCAN Clustering
 st.markdown("---")
@@ -180,7 +157,7 @@ if st.button("Run DBSCAN Clustering", key="dbscan"):
         
         # Noise points analysis
         if n_noise > 0:
-            st.subheader("⚠️ Noise Points (Outliers)")
+            st.subheader("Noise Points (Outliers)")
             st.write(f"Found {n_noise} unusual asteroids that don't fit any cluster!")
             st.write("These could be particularly interesting objects requiring special attention.")
             
@@ -189,7 +166,6 @@ if st.button("Run DBSCAN Clustering", key="dbscan"):
             st.dataframe(noise_data.describe().T, use_container_width=True)
         
         pickle.dump(dbscan, open('dbscan_neo.pkl', 'wb'))
-        st.success("DBSCAN model saved!")
 
 # Conclusions
 st.markdown("---")
@@ -211,5 +187,3 @@ st.markdown("""
 - **Scientific Discovery:** Understand asteroid population structure
 - **Mission Planning:** Target similar asteroids for exploration
 """)
-
-st.success("Clustering analysis reveals natural groupings in asteroid population!")

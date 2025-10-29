@@ -15,7 +15,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.cluster import KMeans, DBSCAN
-from sklearn.decomposition import PCA, TruncatedSVD
+from sklearn.decomposition import PCA
 
 print("="*60)
 print("NEO ML PROJECT - TRAINING ALL MODELS")
@@ -138,12 +138,6 @@ pca.fit(X_scaled)
 models['pca_neo'] = pca
 print("   [OK] PCA trained")
 
-print("\n13. Training SVD...")
-svd = TruncatedSVD(n_components=3, random_state=42)
-svd.fit(X_scaled)
-models['svd_neo'] = svd
-print("   [OK] SVD trained")
-
 print("\n" + "="*60)
 print("SAVING MODELS")
 print("="*60)
@@ -199,9 +193,7 @@ print(f"   DBSCAN - Clusters: {n_clusters_db}, Noise Points: {n_noise}")
 
 print("\nDimensionality Reduction:")
 var_pca = sum(pca.explained_variance_ratio_) * 100
-var_svd = sum(svd.explained_variance_ratio_) * 100
 print(f"   PCA (3 components) - Variance Retained: {var_pca:.2f}%")
-print(f"   SVD (3 components) - Variance Retained: {var_svd:.2f}%")
 
 print("\n" + "="*60)
 print("ALL MODELS TRAINED AND SAVED SUCCESSFULLY!")

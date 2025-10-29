@@ -13,7 +13,7 @@ import plotly.graph_objects as go
 import plotly.figure_factory as ff
 from utils import load_neo_data
 
-st.set_page_config(page_title="Classification Models", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Classification Models", layout="wide")
 
 st.title("Classification Models for Hazardous Asteroid Detection")
 
@@ -46,7 +46,7 @@ and orbital characteristics.
 test_size = st.sidebar.slider("Test Set Size (%)", 10, 40, 20, key="class_split") / 100
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42)
 
-st.subheader("📊 Class Distribution")
+st.subheader("Class Distribution")
 col1, col2, col3 = st.columns(3)
 col1.metric("Total Samples", len(y))
 col2.metric("Hazardous (True)", int(y.sum()))
@@ -116,7 +116,6 @@ if st.button("Train Decision Tree", key="dt"):
         st.plotly_chart(fig, use_container_width=True)
         
         pickle.dump(dt, open('decision_tree_neo.pkl', 'wb'))
-        st.success("✅ Model trained and saved!")
 
 # SVM
 st.markdown("---")
@@ -182,6 +181,10 @@ if st.button("Train SVM", key="svm"):
         
         fig, ax = plt.subplots(figsize=(10, 8))
         ax.contourf(xx, yy, Z, alpha=0.3, cmap='RdYlBu')
+        
+        # Add clear hyperplane (decision boundary) as thick black line
+        ax.contour(xx, yy, Z, colors='black', linewidths=3, levels=[0.5], linestyles='solid')
+        
         scatter = ax.scatter(X_test_pca[:, 0], X_test_pca[:, 1], c=y_test, 
                             cmap='RdYlBu', edgecolors='black', s=50)
         ax.set_xlabel('First Principal Component')
@@ -191,7 +194,6 @@ if st.button("Train SVM", key="svm"):
         st.pyplot(fig)
         
         pickle.dump(svm, open('svm_neo.pkl', 'wb'))
-        st.success("✅ Model trained and saved!")
 
 # Ensemble Methods
 st.markdown("---")
@@ -271,7 +273,6 @@ if st.button("Train Ensemble Models", key="ensemble"):
         
         pickle.dump(rf, open('random_forest_neo.pkl', 'wb'))
         pickle.dump(gb, open('gradient_boosting_neo.pkl', 'wb'))
-        st.success("✅ Models trained and saved!")
 
 # Conclusions
 st.markdown("---")
@@ -296,5 +297,3 @@ st.markdown("""
 - Miss distance (how close it gets)
 - Absolute magnitude (brightness/size indicator)
 """)
-
-st.success("Classification complete! These models can save lives through early asteroid detection.")
